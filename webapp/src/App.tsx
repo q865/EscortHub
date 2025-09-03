@@ -3,6 +3,9 @@ import { Hero } from './components/hero/Hero';
 import { Stats } from './components/Stats';
 import { About } from './components/About';
 import { ContactForm } from './components/ContactForm';
+import { ModelsGallery } from './components/ModelsGallery';
+import { HowItWorks } from './components/HowItWorks';
+import { ImportantInfo } from './components/ImportantInfo';
 import { Footer } from './components/footer/Footer';
 
 function App() {
@@ -14,6 +17,9 @@ function App() {
         <Stats />
         <About />
         <ContactForm />
+        <ModelsGallery />
+        <HowItWorks />
+        <ImportantInfo />
       </main>
       <Footer />
     </div>
