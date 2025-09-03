@@ -1,5 +1,6 @@
 import { Header } from './components/header/Header';
 import { Hero } from './components/hero/Hero';
+import { ServiceTiers } from './components/ServiceTiers';
 import { Footer } from './components/footer/Footer';
 
 function App() {
@@ -8,7 +9,7 @@ function App() {
       <Header />
       <main className="flex-grow">
         <Hero />
-        {/* New components will be added here */}
+        <ServiceTiers />
       </main>
       <Footer />
     </div>
