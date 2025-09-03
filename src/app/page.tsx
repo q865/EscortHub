@@ -3,7 +3,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
-import { Menu } from 'lucide-react';
+import Navigation from '@/components/Navigation';
+import { useModalStore } from '@/stores/useModalStore';
 
 // Массив с путями к скачанным фотографиям для слайдера
 const photos = [
@@ -16,6 +17,7 @@ const photos = [
 
 const HomePage = () => {
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
+  const { openModal } = useModalStore();
 
   // Автоматическая смена фото каждые 5 секунд
   useEffect(() => {
@@ -110,9 +112,9 @@ const HomePage = () => {
   const title = "ИСКУССТВО КОМПАНИИ";
 
   return (
-    <div className="flex h-screen overflow-hidden font-sans">
+    <div className="flex flex-col md:flex-row h-screen overflow-hidden font-sans">
       {/* Левая часть: Черная, статичная */}
-      <div className="w-1/2 bg-background-dark text-text-on-dark flex flex-col justify-between p-12 relative">
+      <div className="w-full md:w-1/2 bg-background-dark text-text-on-dark flex flex-col justify-between p-6 md:p-12 relative min-h-screen md:min-h-0">
         {/* Тонкая золотая линия-разделитель */}
         <div className="absolute top-0 right-0 w-px h-full bg-accent opacity-20"></div>
         
@@ -123,22 +125,17 @@ const HomePage = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <div className="font-serif text-3xl font-bold tracking-wide">
+          <div className="font-serif text-2xl md:text-3xl font-bold tracking-wide">
             EscortHub
           </div>
-          <motion.div
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <Menu className="cursor-pointer" size={24} />
-          </motion.div>
+          <Navigation variant="dark" />
         </motion.div>
 
         {/* Главный контент */}
         <div className="flex flex-col justify-center flex-grow text-center space-y-8">
           {/* Заголовок с анимацией по буквам */}
           <motion.h1
-            className="font-serif text-6xl font-bold leading-tight"
+            className="font-serif text-4xl md:text-6xl font-bold leading-tight"
             variants={titleVariants}
             initial="hidden"
             animate="visible"
@@ -156,7 +153,7 @@ const HomePage = () => {
 
           {/* Подзаголовок */}
           <motion.p
-            className="font-sans text-xl leading-relaxed max-w-md mx-auto text-gray-300"
+            className="font-sans text-lg md:text-xl leading-relaxed max-w-md mx-auto text-gray-300 px-4 md:px-0"
             variants={textVariants}
             initial="hidden"
             animate="visible"
@@ -168,13 +165,14 @@ const HomePage = () => {
 
           {/* CTA кнопка */}
           <motion.button
-            className="font-sans text-lg px-8 py-4 border-2 border-accent rounded-sm mx-auto transition-all duration-400 tracking-wide"
+            className="font-sans text-base md:text-lg px-6 md:px-8 py-3 md:py-4 border-2 border-accent rounded-sm mx-auto transition-all duration-400 tracking-wide"
             variants={ctaVariants}
             initial="rest"
             whileHover="hover"
             whileTap={{ scale: 0.98 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.6 }}
+            onClick={openModal}
           >
             Подобрать модель
           </motion.button>
@@ -209,7 +207,7 @@ const HomePage = () => {
       </div>
 
       {/* Правая часть: Белая, с динамичным слайдером */}
-      <div className="w-1/2 bg-background-light relative overflow-hidden">
+      <div className="w-full md:w-1/2 bg-background-light relative overflow-hidden h-64 md:h-auto">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentPhotoIndex}
