@@ -1,17 +1,17 @@
-import ConfidentialSection from '@/components/ConfidentialSection';
-import FinalSection from '@/components/FinalSection';
-import OrganizationSteps from '@/components/OrganizationSteps';
-import ServiceAdvantages from '@/components/ServiceAdvantages';
-import WeekendOrganizer from '@/components/WeekendOrganizer';
+import Hero from '@/components/Hero';
+import WhyUs from '@/components/WhyUs';
+import HowItWorks from '@/components/HowItWorks';
+import FinalCTA from '@/components/FinalCTA';
+import ModelsGallery from '@/components/ModelsGallery';
 
 export default function Home() {
   return (
     <main>
-      <WeekendOrganizer />
-      <ConfidentialSection />
-      <ServiceAdvantages />
-      <OrganizationSteps />
-      <FinalSection />
+      <Hero />
+      <WhyUs />
+      <ModelsGallery />
+      <HowItWorks />
+      <FinalCTA />
     </main>
   );
 }

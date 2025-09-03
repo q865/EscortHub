@@ -1,4 +1,5 @@
 import React from 'react';
+import Container from './ui/Container';
 
 interface SectionProps {
   children: React.ReactNode;
@@ -7,10 +8,8 @@ interface SectionProps {
 
 const Section: React.FC<SectionProps> = ({ children, className = '' }) => {
   return (
-    <section className={`min-h-screen flex items-center justify-center p-4 ${className}`}>
-      <div className="container mx-auto max-w-sm md:max-w-md lg:max-w-xl">
-        {children}
-      </div>
+    <section className={`py-16 sm:py-24 ${className}`}>
+      <Container>{children}</Container>
     </section>
   );
 };
