@@ -1,15 +1,15 @@
 export const Hero = () => {
   return (
-    <section className="text-center py-20 sm:py-32">
+    <section className="text-left py-20 sm:py-32 bg-white">
       <div className="container mx-auto px-4">
-        <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tighter uppercase mb-4">
-          Разные вы. Одна Ultima
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-4 max-w-2xl">
+          Спутницы для важного мероприятия, на отдых & вечеринку
         </h1>
-        <p className="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto mb-8">
-          Поездки на автомобилях премиум-класса для работы и отдыха
+        <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto mb-8 ml-0">
+          Выбирайте эмоции и легкость
         </p>
-        <button className="bg-yellow-500 text-black font-bold py-4 px-10 rounded hover:bg-yellow-600 transition-colors text-lg">
-          Заказать
+        <button className="border border-gray-900 text-gray-900 font-bold py-3 px-8 rounded hover:bg-gray-100 transition-colors text-lg">
+          Каталог моделей
         </button>
       </div>
     </section>
