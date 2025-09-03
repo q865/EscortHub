@@ -1,7 +1,6 @@
 import { Header } from './components/header/Header';
 import { Hero } from './components/hero/Hero';
-import { ServiceTiers } from './components/ServiceTiers';
-import { DriverQuality } from './components/DriverQuality';
+import { Stats } from './components/Stats';
 import { Footer } from './components/footer/Footer';
 
 function App() {
@@ -10,8 +9,7 @@ function App() {
       <Header />
       <main className="flex-grow">
         <Hero />
-        <ServiceTiers />
-        <DriverQuality />
+        <Stats />
       </main>
       <Footer />
     </div>
