@@ -1,6 +1,7 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useModalStore } from '@/stores/useModalStore';
 import { Button } from './ui/Button';
@@ -11,16 +12,31 @@ import Text from './ui/Text';
 const Hero = () => {
   const { openModal } = useModalStore();
 
+  const [videoError, setVideoError] = useState(false);
+
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <video
-        src="/videos/hero-bg.mp4"
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute z-0 w-auto min-w-full min-h-full max-w-none object-cover"
-      />
+      {!videoError ? (
+        <video
+          src="/videos/hero-bg.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster="/images/model-1.jpg"
+          onError={() => setVideoError(true)}
+          className="absolute z-0 w-auto min-w-full min-h-full max-w-none object-cover"
+        />
+      ) : (
+        <Image
+          src="/images/model-1.jpg"
+          alt="EscortHub"
+          fill
+          priority
+          sizes="100vw"
+          className="absolute z-0 object-cover"
+        />
+      )}
       <div className="absolute inset-0 bg-black/60 z-10" />
       
       <Container className="relative z-20 text-center">

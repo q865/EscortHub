@@ -17,8 +17,8 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: 'Премиальный сервис сопровождения | Ваш идеальный досуг',
-  description: 'Элитные спутницы для любых событий: от деловых встреч до светских раутов. Гарантия конфиденциальности и безупречного сервиса.',
+  title: 'EscortHub | Искусство Компании',
+  description: 'Эксклюзивный сервис подбора спутниц для элитного досуга. Конфиденциальность, стиль и безупречное качество.',
 };
 
 export default function RootLayout({
@@ -28,10 +28,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
-      <body className={`${inter.variable} ${playfair.variable} font-sans bg-ui-background text-text-body antialiased`}>
-        <Header />
+      <body className={`${inter.variable} ${playfair.variable} font-sans bg-background-dark text-text-on-dark antialiased`}>
         <main>{children}</main>
-        <Footer />
         <Modal>
           <ContactForm />
         </Modal>

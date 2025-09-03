@@ -9,19 +9,26 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-geist-sans)', 'sans-serif'],
-        serif: ['var(--font-playfair)', 'serif'],
+        sans: ['var(--font-inter)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        serif: ['var(--font-playfair)', 'ui-serif', 'serif'],
       },
       colors: {
-        'ui-background': '#0D0D0D', // Deep graphite
+        // Split-screen design colors
+        'background-dark': '#000000',
+        'background-light': '#FFFFFF', 
+        'text-on-dark': '#FFFFFF',
+        'text-on-light': '#000000',
+        'accent': '#D4AF37',
+        // Keep existing colors for backward compatibility
+        'ui-background': '#0D0D0D',
         'ui-background-light': '#F9FAFB',
         'ui-surface': '#1F2937',
         'ui-surface-light': '#FFFFFF',
-        'brand-primary': '#C1224F', // Muted, wine-like pink
+        'brand-primary': '#C1224F',
         'brand-primary-light': '#FBCFE8',
-        'brand-secondary': '#D97706', // Richer orange
+        'brand-secondary': '#D97706',
         'brand-secondary-light': '#FED7AA',
-        'brand-accent': '#9333EA', // Vibrant purple
+        'brand-accent': '#9333EA',
         'brand-accent-light': '#E9D5FF',
         'text-heading': '#F9FAFB',
         'text-body': '#D1D5DB',
